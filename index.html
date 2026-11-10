@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline Weather</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-sky="day">
+<div class="app">
+  <header>
+    <form id="searchForm" class="search" autocomplete="off" role="search">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="q" type="text" placeholder="Search a city" aria-label="Search for a city" role="combobox" aria-expanded="false" aria-controls="suggest">
+      <button type="button" id="locate" title="Use my location" aria-label="Use my location">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+      </button>
+      <ul id="suggest" role="listbox" hidden></ul>
+    </form>
+    <div class="seg" role="group" aria-label="Temperature unit">
+      <button data-u="c" aria-pressed="true">°C</button>
+      <button data-u="f" aria-pressed="false">°F</button>
+    </div>
+  </header>
+
+  <p id="status" role="status" aria-live="polite"></p>
+
+  <main id="main" hidden>
+    <section class="hero">
+      <div class="where">
+        <h1 id="city"></h1>
+        <p id="region"></p>
+        <p id="localtime"></p>
+      </div>
+      <div class="now">
+        <div class="temp"><span id="temp"></span><sup id="unit">°</sup></div>
+        <div id="bigIcon" class="big-icon" aria-hidden="true"></div>
+      </div>
+      <p class="cond"><strong id="cond"></strong><span id="hilo"></span></p>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Current conditions"></section>
+
+    <section class="panel">
+      <h2>Next 24 hours</h2>
+      <div id="hourly" class="hourly"></div>
+    </section>
+
+    <section class="panel">
+      <h2>7-day forecast</h2>
+      <ul id="daily" class="daily"></ul>
+    </section>
+  </main>
+  <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
