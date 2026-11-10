@@ -1,9 +1,5 @@
-// ======================================================
-//  Skyline Weather - simple version
-//  Flow: search city -> get latitude/longitude -> get weather -> show it
-// ======================================================
 
-// ---------- 1. API addresses ----------
+// ------------- API ---------------------------
 const GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search";
 const WEATHER_URL = "https://api.open-meteo.com/v1/forecast";
 
